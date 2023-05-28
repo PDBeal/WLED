@@ -189,6 +189,10 @@
 #include "../usermods/pwm_outputs/usermod_pwm_outputs.h"
 #endif
 
+#ifdef USERMOD_M5STICKCPLUS_LCD
+#include "../usermods/M5StickCPlus_LCD/m5stickcplus_lcd.h"
+#endif
+
 
 void registerUsermods()
 {
@@ -356,5 +360,9 @@ void registerUsermods()
 
   #ifdef USERMOD_SHT
   usermods.add(new ShtUsermod());
+  #endif
+
+  #ifdef USERMOD_M5STICKCPLUS_LCD
+  usermods.add(new m5stickcplus_lcd());
   #endif
 }
